@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+}
+.wrapper{
+    width: 100%;
+    margin: 0px auto;
+}
+body{
+    width: 100%;
+    height: 100%;
+    
+    
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+p{
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.container{
+    width: 90%;
+    max-width: 120rem;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+header{
+    background-image: url(assets/E1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.top{
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: -100vh;
+    z-index: 50;
+    background-color: #000000;
+    border-bottom-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    transition: all 650ms cubic-bezier(1,0,0,1);
+}
+.nav_list{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav_list a{
+    color: #ffffff;
+}
+li{
+    margin: 0 2rem;
+}
+.nav_link{
+    font-family: 'The Historia Demo', sans-serif;
+    font-size: 4.5rem;
+    padding: 1rem;
+}
+.nav_link:hover,
+.nav_link:focus{
+    background: linear-gradient(to top, #ffe838, #fd57bf);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.top.open{
+    top: 0;
+    border-radius: initial;
+}
+.menu_toggler{
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+    width: 5rem;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1500;
+    transition: transform 650ms ease-out;
+}
+.floating {  
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left: 30px;
+    margin-top: 5px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+.column>img:hover{
+    opacity: .5;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, -0px); }    
+}
+.menu_toggler.open{
+    transform: rotate(-45deg);
+}
+.bar{
+    background: linear-gradient(to right, #000000,  #FF6600);
+    width: 100%;
+    height: 4px;
+    border-radius: .8rem;
+}
+.bar.half{
+    width: 50%;
+}
+.bar.start{
+    transform-origin: right;
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+.open .bar.start{
+    transform: rotate(-450deg) translateX(.8rem);
+}
+.bar.end{
+    align-self: flex-end;
+    transform-origin: left;
+    transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+.open .bar.end{
+    transform: rotate(-450deg) translateX(-.8rem);
+}
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}.main h1{
+    font-size: 20rem;
+    font-family: 'The Historia Demo', sans-serif;
+    background: linear-gradient(to top,#FAAFBE,  #000000);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    user-select: none;
+}
+.main h4{
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+.middle{
+    width: 100%;
+    height: 100%;
+    
+    background-size: cover;
+    -webkit-box-shadow: 12px 12px 45px 0 #759FFF;
+    box-shadow: 12px 12px 45px 0 #759FFF;
+}
+
+
+.middle{
+    display: flex;
+}
+
+p{
+    padding-left: 2rem;
+}
+@media screen and (max-width: 768px) {
+    .abc{
+        width: 130px;
+    }
+}
+.abc>img:hover{
+    opacity: .8;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .menu_toggler{
+        top: 2rem;
+        right: 2rem;
+    }
+    .main h1{
+        font-size: 13rem;
+        padding-top: 100px;
+    }
+    .main h4{
+        font-size: 1.7rem;
+    }
+    .container .heading h1{
+        font-size: 6rem;
+    }
+    .container{
+        flex-direction: column;
+    }
+    .middle{
+        width: 100%;
+        display: flex;
+        flex-flow: column  wrap;
+    }
+    
+    p{
+        font-size: 2rem;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+    .nav_list{
+        flex-direction: column;
+    }
+    li{
+        margin: 2rem 0;
+        font-size: 2.6rem;
+    }
+    .nav_link{
+        font-size: 2.5rem;
+    }
+    .details .nav{
+        flex-direction: initial;
+    }
+    .details li{
+        margin: 0 2rem;
+    }
+}
+
+
+@media screen 
+  and (device-width: 360px) 
+  and (device-height: 640px) 
+  and (-webkit-device-pixel-ratio: 2) {
+    .menu_toggler{
+        top: 2rem;
+        right: .5rem;
+    }
+   
+    .main h1{
+        font-size: 8rem;
+        padding-top: 100px;
+    }
+    .main h4{
+        font-size: 1.7rem;
+    }
+    .middle{
+        display: flex;
+        flex-flow: column  wrap;
+    }
+   
+    p{
+        font-size: 3rem;
+    }
+    .nav_list{
+        flex-direction: column;
+    }
+    li{
+        margin: 2rem 0;
+        font-size: 2.6rem;
+    }
+    .nav_link{
+        font-size: 4.5rem;
+    }
+    .details .nav{
+        flex-direction: initial;
+    }
+    .details li{
+        margin: 0 2rem;
+    }
+    
+}
+@media 
+  (min-device-width: 800px) 
+  and (max-device-width: 1280px) {
+    .menu_toggler{
+        top: 2rem;
+        right: 2rem;
+    }
+   
+    .main h1{
+        font-size: 8rem;
+        padding-top: 100px;
+    }
+    .main h4{
+        font-size: 1.7rem;
+    }
+    .heading h1{
+        font-size: 6rem;
+    }
+    .middle{
+        display: flex;
+        flex-flow: column  wrap;
+    }
+    
+    p{
+        font-size: 3rem;
+    }
+    .nav_list{
+        flex-direction: column;
+    }
+    li{
+        margin: 2rem 0;
+        font-size: 2.6rem;
+    }
+    .nav_link{
+        font-size: 4.5rem;
+    }
+    .details .nav{
+        flex-direction: initial;
+    }
+    .details li{
+        margin: 0 2rem;
+    }
+     
+}
